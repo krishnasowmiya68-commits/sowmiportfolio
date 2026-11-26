@@ -4,343 +4,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Sowmiya Krishnamurthy, M.Tech. Integrated Software Engineering student at VIT.">
-    <title>Sowmiya Krishnamurthy | Portfolio</title>
+    <meta name="description" content="Engineering portfolio showcasing embedded systems, robotics, Edge AI, software development and real-time data engineering projects.">
+    <title>Sowmiya Krishnamurthy | Engineering Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <!-- Navigation -->
-    <header class="navbar">
-        <a href="#home" class="logo">S<span>.</span></a>
-
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#research">Research</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#contact">Contact</a>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Sowmiya.</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <main>
-
-        <!-- Home -->
-        <section id="home" class="hero section">
-            <p class="eyebrow">HELLO! I'M</p>
-
-            <h1>Sowmiya<br><span>Krishnamurthy.</span></h1>
-
-            <h2>M.Tech. Integrated Software Engineering</h2>
-
-            <p class="hero-text">
-                Software Engineer| Big Data | DevOps |Embedded systems
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#projects" class="button primary">
-                    Explore My Projects
-                </a>
-
-                <a href="#contact" class="button secondary">
-                    Contact Me
-                </a>
-            </div>
-
-            <p class="location">VIT Vellore · Tamil Nadu, India</p>
-        </section>
-
-
-        <!-- About -->
-        <section id="about" class="section">
-            <p class="eyebrow">GET TO KNOW ME</p>
-            <h2 class="section-title">About Me</h2>
-
-            <div class="about-card">
-
-                <p>
-                    I am pursuing an M.Tech. Integrated Software Engineering
-                    degree at Vellore Institute of Technology (VIT), Vellore,
-                    with expected graduation in 2027.
-                </p>
-
-                <p>
-                     I have a strong foundation in  C++, and Python with interests in Software Development,
-                      Data Engineering, Big Data, Artificial Intelligence, and Cloud Technologies.
-
-
-                </p>
-
-                <p>
-                    Through academic and research projects, I have gained hands-on experience in Python programming, 
-                    real-time data processing using Apache Kafka and Apache Spark, machine learning, and building technology-driven solutions.
-                     My research work on scalable road surface anomaly detection was presented at IEEE STPEC 2025.
-                </p>
-
-                <p>
-                    I enjoy exploring new technologies, building practical
-                    solutions, and applying my technical knowledge to
-                    solve real-world problems.
-                </p>
-
-            </div>
-        </section>
-
-
-        <!-- Technical Skills -->
-        <section id="skills" class="section">
-            <p class="eyebrow">WHAT I WORK WITH</p>
-            <h2 class="section-title">Technical Skills</h2>
-
-            <div class="skills-grid">
-
-                <article class="skill-card">
-                    <h3>Programming</h3>
-                    <p>C++ · C · Python</p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Embedded Systems & IoT</h3>
-                    <p>
-                        ESP32 · ESP32-CAM · Raspberry Pi ·
-                        Microcontrollers · Sensors · IoT ·
-                        Edge AI · Real-Time Systems
-                    </p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Big Data</h3>
-                    <p>
-                        Apache Kafka · Apache Spark · PySpark ·
-                        Real-Time Data Streaming · ETL Pipelines
-                    </p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>AI & Machine Learning</h3>
-                    <p>
-                        YOLOv5 · TensorFlow · PyTorch ·
-                        Transformer Architecture · NLP Pipelines ·
-                        RAG · LLM Fine-Tuning
-                    </p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>DevOps & Cloud Technologies</h3>
-                    <p>
-                        Git · GitHub · linux · Jenkins · Docker · CI/CD · AWS · Shell Scripting
-                    </p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Tools & Platforms</h3>
-                    <p>
-                        REST APIs · MATLAB · VS Code · Jupyter Notebook
-                       
-                    </p>
-                </article>
-
-            </div>
-        </section>
-
-
-        <!-- Technical Projects -->
-        <section id="projects" class="section">
-            <p class="eyebrow">WHAT I'VE BUILT</p>
-            <h2 class="section-title">Technical Projects</h2>
-
-            <div class="projects-grid">
-
-                <!-- Project 1 -->
-                <article class="project-card">
-
-                    <span class="project-number">
-                        01 / EDGE AI + IoT — VIT Research Lab
-                    </span>
-
-                    <h3>Roadside Unit-Based V2X Hazard Alert System</h3>
-
-                    <p>
-                        Deployed YOLOv5n on Raspberry Pi 4 and ESP32-CAM,
-                        achieving &gt;85% road anomaly detection accuracy.
-                        Developed an offline-first hybrid V2X communication
-                        framework eliminating internet dependency for rural roads.
-                    </p>
-
-                    <p>
-                        Engineered real-time vehicle-to-vehicle broadcasting
-                        through an RSU mesh with cloud-sync fallback.
-                        Validated the sensor fusion pipeline across
-                        500+ test scenarios.
-                    </p>
-
-                    <p class="tech-stack">
-                        YOLOv5n · Raspberry Pi 4 · ESP32-CAM ·
-                        Edge AI · IoT · V2X
-                    </p>
-
-                    <a href="#research" class="text-link">
-                        Related Research &rarr;
-                    </a>
-
-                </article>
-
-
-                <!-- Project 2 -->
-                <article class="project-card">
-
-                    <span class="project-number">
-                        02 / Real-Time Data Engineering and Analytics Pipeline
-                    </span>
-
-                    <p>
-                       Developed an end-to-end data pipeline using Python
-                        and Apache Kafka for real-time data ingestion and streaming.
-                    </p>
-
-                    <p>
-                       Implemented ETL workflows using Apache Spark and PySpark 
-                       to clean, transform and process large datasets.Integrated SQL
-                        and Power BI to store, analyze and visualize processed data through interactive dashboards.
-                    </p>
-
-                    <p class="tech-stack">
-                       Python | Apache Kafka | Apache Spark | PySpark | Spark Structured Streaming | SQL 
-                       | Power BI | AWS
-                    </p>
-
-                </article>
-
-
-                <!-- Project 3 -->
-                <article class="project-card">
-
-                    <span class="project-number">
-                        03 / MACHINE LEARNING
-                    </span>
-
-                    <h3>AgriVision Plant Disease Prediction</h3>
-
-                    <p>
-                        Developed a CNN-based plant disease prediction
-                        system for classifying diseases in potato
-                        and tomato leaves.
-                    </p>
-
-                    <p>
-                        Implemented image preprocessing and classification
-                        using Python and TensorFlow. Developed a
-                        Tkinter-based interface for uploading leaf
-                        images and displaying disease predictions.
-                    </p>
-
-                    <p class="tech-stack">
-                        Python · CNN · TensorFlow ·
-                        Image Processing · Tkinter
-                    </p>
-
-                </article>
-
-            </div>
-        </section>
-
-
-        <!-- Research Experience -->
-        <section id="research" class="section">
-            <p class="eyebrow">RESEARCH & ACHIEVEMENTS</p>
-            <h2 class="section-title">Research Experience</h2>
-
-            <article class="research-card">
-
-                <p class="research-label">
-                    IEEE STPEC 2025 · NIT Goa · December 2025
-                </p>
-
-                <h3>
-                    Scalable Road Surface Anomaly Detection System
-                    Using Apache Spark and Real-Time Data Streaming
-                </h3>
-
-                <p>
-                    Research Paper Presenter and Co-Author
-                </p>
-
-                <p>
-                    Developed a real-time road surface anomaly detection
-                    system using Apache Kafka, Apache Spark, and PySpark.
-                    Applied machine learning to sensor data for detecting
-                    potholes, cracks, and uneven road surfaces.
-                </p>
-
-                <p class="tech-stack">
-                    Apache Kafka · Apache Spark · PySpark ·
-                    Real-Time Data Streaming
-                </p>
-
-            </article>
-        </section>
-
-
-        <!-- Certifications -->
-        <section id="certifications" class="section">
-            <p class="eyebrow">CONTINUOUS LEARNING</p>
-            <h2 class="section-title">Certifications</h2>
-
-                   
-                </div>
-
-                <div class="cert-item">
-                    <span class="cert-icon">&#10003;</span>
-                    <p>Quantum Programming using Qiskit</p>
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- Contact -->
-        <section id="contact" class="section contact-section">
-
-            <p class="eyebrow">LET'S CONNECT</p>
-            <h2 class="section-title">Get in Touch</h2>
-
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <p class="hero-tag">ENGINEERING STUDENT | VIT VELLORE</p>
+            <h1>Hi, I'm <span>Sowmiya Krishnamurthy</span></h1>
+            <h2>Software Engineering | Embedded Systems | Robotics | Edge AI</h2>
             <p>
-                I am interested in Embedded Systems, IoT,
-                Software Engineering, and Data-related opportunities.
-                I look forward to learning, collaborating, and
-                contributing to meaningful projects.
+                Interested in building practical technology solutions through
+                hardware-software integration, embedded systems, computer vision
+                and real-time engineering applications.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn">View Projects</a>
+                <a href="#contact" class="btn btn-outline">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>
+                I am pursuing an Integrated M.Tech in Software Engineering at
+                Vellore Institute of Technology, with an expected graduation
+                in 2027.
+            </p>
+            <p>
+                My interests include embedded systems, robotics, Edge AI and
+                real-time technology solutions. I have worked on projects
+                involving Raspberry Pi, ESP32, computer vision and data
+                engineering, gaining practical exposure to integrating
+                hardware and software components.
+            </p>
+            <p>
+                I enjoy learning new technologies, solving engineering
+                problems and collaborating on projects that connect software
+                with real-world applications.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section">
+        <h2 class="section-title">Technical Skills</h2>
+
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <h3>Programming</h3>
+                <p>C++ · C · Python</p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Hardware & Embedded Systems</h3>
+                <p>
+                    Raspberry Pi 4 · ESP32 · ESP32-CAM · Microcontrollers ·
+                    Sensors · IoT · Embedded Systems
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Robotics & Autonomous Systems</h3>
+                <p>
+                    V2X Communication · Sensor Fusion · Edge AI ·
+                    Real-Time Systems · Autonomous Systems Fundamentals
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>AI & Computer Vision</h3>
+                <p>
+                    YOLOv5n · Image Processing · Machine Learning ·
+                    TensorFlow · PyTorch
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>Data Engineering</h3>
+                <p>
+                    Apache Kafka · Apache Spark · PySpark · ETL · SQL ·
+                    Power BI · Pandas · NumPy
+                </p>
+            </div>
+
+            <div class="skill-card">
+                <h3>DevOps & Development Tools</h3>
+                <p>
+                    Docker · Jenkins · AWS · Git · GitHub · Linux ·
+                    Selenium · VS Code
+                </p>
+            </div>
+
+        </div>
+
+        <p class="skill-note">
+            Currently developing my knowledge of robotics concepts such as
+            SLAM, ROS2, LiDAR-based navigation, motor control and path planning.
+        </p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <h3>Roadside Unit-Based V2X Hazard Alert System</h3>
+                <p class="project-tech">
+                    Raspberry Pi 4 · ESP32-CAM · YOLOv5n · Edge AI · IoT
+                </p>
+                <p>
+                    Developed an edge-based road hazard detection system
+                    using YOLOv5n on Raspberry Pi 4 and ESP32-CAM. The system
+                    identifies road anomalies and supports vehicle-to-
+                    infrastructure communication for hazard alerts.
+                </p>
+                <p>
+                    Implemented an offline-first approach with RSU mesh
+                    communication and cloud synchronization fallback.
+                    Tested the system across 500+ scenarios and achieved
+                    over 85% detection accuracy.
+                </p>
+                <span class="project-label">VIT Research Lab | Jun–Aug 2025</span>
+            </div>
+
+            <div class="project-card">
+                <h3>Scalable Road Surface Anomaly Detection Using Apache Spark</h3>
+                <p class="project-tech">
+                    Apache Kafka · Spark · PySpark · Python · Machine Learning
+                </p>
+                <p>
+                    Worked on a scalable road surface anomaly detection
+                    approach using real-time data streaming and distributed
+                    data processing. The project uses Kafka and Spark to
+                    process sensor data for identifying road conditions
+                    such as potholes and cracks.
+                </p>
+                <span class="project-label">IEEE STPEC 2025 | NIT Goa</span>
+            </div>
+
+            <div class="project-card">
+                <h3>Real-Time Data Engineering and Analytics Pipeline</h3>
+                <p class="project-tech">
+                    Python · Kafka · Spark · PySpark · SQL · Power BI · AWS
+                </p>
+                <p>
+                    Designed a data engineering workflow focused on
+                    collecting, processing and analysing data using
+                    streaming and distributed processing technologies.
+                    The project demonstrates an end-to-end data pipeline
+                    concept.
+                </p>
+            </div>
+
+            <div class="project-card">
+                <h3>AgriVision – Plant Disease Prediction</h3>
+                <p class="project-tech">
+                    Python · CNN · TensorFlow · Tkinter
+                </p>
+                <p>
+                    Developed a plant disease prediction application using
+                    image classification techniques to identify diseases
+                    in tomato and potato leaves.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research" class="section">
+        <h2 class="section-title">Research & Publications</h2>
+
+        <div class="research-card">
+            <h3>
+                Scalable Road Surface Anomaly Detection System Using
+                Apache Spark and Real-Time Data Streaming
+            </h3>
+            <p>
+                Presented and co-authored a research paper at IEEE STPEC 2025,
+                National Institute of Technology Goa.
+            </p>
+            <p>
+                Research focused on real-time streaming, distributed data
+                processing and road surface anomaly detection.
+            </p>
+            <a href="https://doi.org/10.1109/STPEC66316.2025.11490545"
+               target="_blank" rel="noopener noreferrer">
+                View IEEE Publication →
+            </a>
+        </div>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications" class="section">
+        <h2 class="section-title">Certifications</h2>
+
+        <div class="cert-list">
+            <div class="cert-item">
+                <h3>Quantum Programming using Qiskit</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <h2 class="section-title">Get In Touch</h2>
+
+        <div class="contact-content">
+            <p>
+                I am interested in opportunities involving software
+                engineering, embedded systems, robotics, hardware-software
+                integration and engineering project coordination.
             </p>
 
             <div class="contact-links">
-
-                <a href="mailto:krishnasowmiya68@gmail.com">
-                    Email Me
-                </a>
+                <a href="mailto:krishnasowmiya68@gmail.com">Email</a>
 
                 <a href="https://www.linkedin.com/in/sowmiya-krishnamurthy-88515b385/"
-                   target="_blank" rel="noopener noreferrer">
-                    LinkedIn
-                </a>
+                   target="_blank" rel="noopener noreferrer">LinkedIn</a>
 
                 <a href="https://github.com/krishnasowmiya68-commits/"
-                   target="_blank" rel="noopener noreferrer">
-                    GitHub
-                </a>
-
+                   target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
-
-        </section>
-
-    </main>
-
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <p>
-            &copy; 2026 Sowmiya Krishnamurthy.
-            Built with HTML and CSS.
-        </p>
+        <p>© 2026 Sowmiya Krishnamurthy. All rights reserved.</p>
     </footer>
 
 </body>
