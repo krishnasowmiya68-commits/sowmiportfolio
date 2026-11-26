@@ -1,4 +1,3 @@
-
 /* ---------- Base styles ---------- */
 
 :root {
@@ -34,6 +33,7 @@ a {
     width: min(1050px, 90%);
     margin: 0 auto;
     padding: 85px 0;
+    scroll-margin-top: 75px;
 }
 
 /* ---------- Navigation ---------- */
@@ -48,6 +48,7 @@ a {
     padding: 18px 7%;
     background: rgba(11, 13, 20, 0.95);
     border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
 }
 
 .logo {
@@ -109,7 +110,7 @@ a {
 }
 
 .hero-text {
-    max-width: 640px;
+    max-width: 680px;
     color: var(--muted);
 }
 
@@ -211,6 +212,12 @@ a {
     font-size: 14px;
 }
 
+.skills-note {
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
 /* ---------- Projects ---------- */
 
 .projects-grid {
@@ -248,12 +255,14 @@ a {
 .project-card p {
     color: var(--muted);
     font-size: 14px;
+    margin-bottom: 10px;
 }
 
 .project-card .tech-stack {
     color: #d2c8ff;
     font-size: 12px;
     margin-top: 18px;
+    margin-bottom: 0;
 }
 
 .text-link {
@@ -295,6 +304,11 @@ a {
     margin-bottom: 0;
 }
 
+.research-card .tech-stack {
+    color: #d2c8ff;
+    font-size: 12px;
+}
+
 /* ---------- Certifications ---------- */
 
 .cert-list {
@@ -325,7 +339,7 @@ a {
 
 .contact-section > p:not(.eyebrow) {
     color: var(--muted);
-    max-width: 650px;
+    max-width: 680px;
 }
 
 .contact-links {
@@ -346,11 +360,6 @@ a {
 .contact-links a:hover {
     color: var(--accent);
     border-color: var(--accent);
-}
-
-.resume-note {
-    margin-top: 20px;
-    font-size: 12px;
 }
 
 /* ---------- Footer ---------- */
