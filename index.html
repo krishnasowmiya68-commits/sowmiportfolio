@@ -2,301 +2,429 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Sowmiya Krishnamurthy, Software Engineering student at VIT.">
-    <title>Sowmiya Krishnamurthy | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sowmiya Krishnamurthy - Software Engineering student portfolio">
+<title>Sowmiya Krishnamurthy | Portfolio</title>
+
+<style>
+:root {
+    --background: #0b0d14;
+    --surface: #131722;
+    --surface-hover: #1a2030;
+    --text: #f3f4f8;
+    --muted: #a4a9ba;
+    --accent: #a78bfa;
+    --border: #272d3b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 9%;
+    background: rgba(11,13,20,0.95);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.logo span, .hero h1 span {
+    color: var(--accent);
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--muted);
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+.section {
+    padding: 90px 9%;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.eyebrow {
+    color: var(--accent);
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.15;
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    color: var(--muted);
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.hero-text {
+    color: var(--muted);
+    max-width: 600px;
+    margin-bottom: 28px;
+}
+
+.button {
+    display: inline-block;
+    padding: 11px 23px;
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    color: var(--accent);
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: var(--accent);
+    color: #0b0d14;
+}
+
+.section-heading {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.section-heading span {
+    color: var(--accent);
+}
+
+.about-card, .skill-card, .project-card,
+.research-card, .cert-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 25px;
+    transition: 0.3s;
+}
+
+.about-card:hover, .skill-card:hover,
+.project-card:hover, .research-card:hover,
+.cert-item:hover {
+    transform: translateY(-5px);
+    background: var(--surface-hover);
+    border-color: var(--accent);
+}
+
+.about-card p {
+    color: var(--muted);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.skill-card h3, .project-card h3,
+.research-card h3 {
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+
+.skill-card p, .project-card p,
+.research-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.project-card .tech {
+    color: var(--accent);
+    font-size: 13px;
+}
+
+.project-card a, .research-card a {
+    color: var(--accent);
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.project-card a:hover, .research-card a:hover {
+    text-decoration: underline;
+}
+
+.research-card p {
+    margin-bottom: 12px;
+}
+
+.cert-list {
+    display: grid;
+    gap: 15px;
+}
+
+.cert-item {
+    color: var(--muted);
+}
+
+.contact-section {
+    text-align: center;
+}
+
+.contact-section p {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.contact-links a {
+    color: var(--accent);
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px 5%;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .section {
+        padding: 65px 6%;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+}
+</style>
 </head>
+
 <body>
 
-    <!-- Navigation -->
-    <header class="navbar">
-        <a href="#home" class="logo">S<span>.</span></a>
+<header class="navbar">
+    <a href="#home" class="logo">S<span>.</span></a>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#research">Research</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<section id="home" class="hero section">
+    <p class="eyebrow">HELLO! I'M</p>
+    <h1>Sowmiya<br><span>Krishnamurthy.</span></h1>
+    <h2>M.Tech Integrated Software Engineering</h2>
+    <p class="hero-text">
+        Engineering student interested in hardware and software integration,
+        embedded systems, and real-time technology.
+    </p>
+    <a href="#about" class="button">Explore My Portfolio</a>
+</section>
 
-    <main>
-        <!-- Home -->
-        <section id="home" class="hero section">
-            <p class="eyebrow">HELLO! I'M</p>
-
-            <h1>Sowmiya<br><span>Krishnamurthy.</span></h1>
-
-            <h2>M.Tech in Software Engineering</h2>
-
-            <p class="hero-text">
-                Engineering student interested in hardware and software integration, embedded systems, and real-time technology.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#projects" class="button primary">
-                    Explore My Projects
-                </a>
-
-                <a href="#contact" class="button secondary">
-                    Contact Me
-                </a>
-            </div>
-
-            <p class="location">VIT Vellore · Tamil Nadu, India</p>
-        </section>
-
-        <!-- About -->
-        <section id="about" class="section">
-            <p class="eyebrow">GET TO KNOW ME</p>
-            <h2 class="section-title">About Me</h2>
-
-            <div class="about-card">
-                <p>
-                    I am pursuing an Integrated M.Tech in Software
-                    Engineering at Vellore Institute of Technology
-                    (VIT), Vellore, with expected graduation in 2027.
-                </p>
-
-                <p>
-                    I have a foundation in Python, C++, and SQL, along
-                    with practical exposure to embedded systems,
-                    computer vision and data engineering through
-                    academic and research projects.
-                </p>
-
-                <p>
-                    I am continuously expanding my technical skills
-                    and enjoy applying my knowledge to solve
-                    real-world engineering problems.
-                </p>
-            </div>
-        </section>
-
-        <!-- Skills -->
-        <section id="skills" class="section">
-            <p class="eyebrow">WHAT I WORK WITH</p>
-            <h2 class="section-title">Technical Skills</h2>
-
-            <div class="skills-grid">
-                <article class="skill-card">
-                    <h3>Programming</h3>
-                    <p>Python · C++ · C</p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Hardware & Embedded Systems</h3>
-                    <p>Raspberry Pi 4 · ESP32 · ESP32-CAM · Microcontrollers · Sensors</p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Robotics & Autonomous Systems</h3>
-                    <p>V2X Communication · Sensor Fusion · Edge AI · Real-Time Systems</p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>AI & Computer Vision</h3>
-                    <p>YOLOv5n · OpenCV · MediaPipe · TensorFlow · Image Processing</p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Data Engineering</h3>
-                    <p>Apache Spark · PySpark · Apache Kafka · ETL</p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Data Analytics</h3>
-                    <p>SQL · Power BI · Pandas · NumPy · Excel</p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>DevOps</h3>
-                    <p>Docker · Jenkins · AWS · Git · GitHub · Linux</p>
-                </article>
-
-                <article class="skill-card">
-                    <h3>Tools</h3>
-                    <p>VS Code · Jupyter Notebook · PyAutoGUI</p>
-                </article>
-            </div>
-        </section>
-
-        <!-- Projects -->
-        <section id="projects" class="section">
-            <p class="eyebrow">WHAT I'VE BUILT</p>
-            <h2 class="section-title">Featured Projects</h2>
-
-            <div class="projects-grid">
-
-                <article class="project-card">
-                    <span class="project-number">01 / EMBEDDED SYSTEMS</span>
-                    <h3>Roadside Unit-Based V2X Hazard Alert System</h3>
-
-                    <p>
-                        Developed a road hazard detection system using
-                        YOLOv5n on Raspberry Pi 4 and ESP32-CAM to identify
-                        road anomalies and support vehicle-to-infrastructure
-                        communication.
-                    </p>
-
-                    <p>
-                        Implemented offline-first communication using
-                        an RSU mesh and cloud synchronization fallback.
-                        Tested across 500+ scenarios with over 85%
-                        detection accuracy.
-                    </p>
-
-                    <p class="tech-stack">
-                        Raspberry Pi 4 · ESP32-CAM · YOLOv5n · Python · IoT
-                    </p>
-                </article>
-
-                <article class="project-card">
-                    <span class="project-number">02 / DATA ENGINEERING</span>
-                    <h3>Road Surface Anomaly Detection</h3>
-
-                    <p>
-                        Worked on a scalable road surface anomaly
-                        detection system using real-time sensor data
-                        streaming and distributed processing to
-                        identify potholes, cracks and uneven roads.
-                    </p>
-
-                    <p class="tech-stack">
-                        Apache Spark · PySpark · Kafka
-                    </p>
-
-                    <a href="#research" class="text-link">
-                        Related research &rarr;
-                    </a>
-                </article>
-
-                <article class="project-card">
-                    <span class="project-number">03 / AUTOMATION</span>
-                    <h3>Hand Gesture and Voice Recognition</h3>
-
-                    <p>
-                        Developed a contactless computer control
-                        system using webcam-based hand gesture
-                        recognition and voice commands to interact
-                        with desktop applications.
-                    </p>
-
-                    <p class="tech-stack">
-                        Python · OpenCV · MediaPipe · PyAutoGUI · Whisper
-                    </p>
-                </article>
-
-                <article class="project-card">
-                    <span class="project-number">04 / DATA ANALYTICS</span>
-                    <h3>Sales Data Analysis and Business Insights Dashboard</h3>
-
-                    <p>
-                        Planned project focused on analysing sales
-                        trends, identifying top-performing products
-                        and evaluating regional performance through
-                        an interactive business dashboard.
-                    </p>
-
-                    <p class="tech-stack">
-                        SQL · Python · Excel · Power BI
-                    </p>
-                </article>
-
-            </div>
-        </section>
-
-        <!-- Research -->
-        <section id="research" class="section">
-            <p class="eyebrow">RESEARCH & ACHIEVEMENTS</p>
-            <h2 class="section-title">Research Publication</h2>
-
-            <article class="research-card">
-                <p class="research-label">
-                    IEEE STPEC 2025 · NIT Goa
-                </p>
-
-                <h3>
-                    Scalable Road Surface Anomaly Detection
-                    System Using Apache Spark and Real-Time
-                    Data Streaming
-                </h3>
-
-                <p>
-                    Presenter and Co-Author · December 2025
-                </p>
-
-                <p>
-                    Research on scalable road surface anomaly
-                    detection using real-time data streaming
-                    technologies, including Apache Kafka and
-                    Apache Spark.
-                </p>
-
-                <a href="https://doi.org/10.1109/STPEC66316.2025.11490545"
-                   target="_blank" rel="noopener noreferrer"
-                   class="text-link">
-                    View IEEE Publication &rarr;
-                </a>
-            </article>
-        </section>
-
-        <!-- Certifications -->
-        <section id="certifications" class="section">
-            <p class="eyebrow">CONTINUOUS LEARNING</p>
-            <h2 class="section-title">Certifications</h2>
-
-            <div class="cert-list">
-                <div class="cert-item">
-                    <span class="cert-icon">&#10003;</span>
-                    <p>Generative AI</p>
-                </div>
-
-                <div class="cert-item">
-                    <span class="cert-icon">&#10003;</span>
-                    <p>Quantum Programming using Qiskit</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section id="contact" class="section contact-section">
-            <p class="eyebrow">LET'S CONNECT</p>
-            <h2 class="section-title">Get in Touch</h2>
-
-            <p>
-                I am interested in software engineering, embedded
-                systems, robotics and technology opportunities
-                where I can contribute and continue learning.
-            </p>
-
-            <div class="contact-links">
-                <a href="mailto:krishnasowmiya68@gmail.com">
-                    Email Me
-                </a>
-
-                <a href="https://www.linkedin.com/in/sowmiya-krishnamurthy-88515b385/"
-                   target="_blank" rel="noopener noreferrer">
-                    LinkedIn
-                </a>
-
-                <a href="https://github.com/krishnasowmiya68-commits/"
-                   target="_blank" rel="noopener noreferrer">
-                    GitHub
-                </a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
+<section id="about" class="section">
+    <h2 class="section-heading">About <span>Me</span></h2>
+    <div class="about-card">
         <p>
-            &copy; 2026 Sowmiya Krishnamurthy.
-            Built with HTML and CSS.
+            I am pursuing an M.Tech Integrated Software Engineering degree
+            at Vellore Institute of Technology, Vellore, with an expected
+            graduation in 2027. I am interested in software development,
+            embedded systems, data technologies and practical engineering
+            solutions. I enjoy learning new technologies and applying
+            them through hands-on projects.
         </p>
-    </footer>
+    </div>
+</section>
+
+<section id="skills" class="section">
+    <h2 class="section-heading">Technical <span>Skills</span></h2>
+    <div class="skills-grid">
+
+        <article class="skill-card">
+            <h3>Programming</h3>
+            <p>Python · C++ · C</p>
+        </article>
+
+        <article class="skill-card">
+            <h3>Data Engineering</h3>
+            <p>Apache Spark · PySpark · Apache Kafka · SQL</p>
+        </article>
+
+        <article class="skill-card">
+            <h3>Data Analytics</h3>
+            <p>Power BI · Pandas · NumPy · Data Visualization</p>
+        </article>
+
+        <article class="skill-card">
+            <h3>AI & Computer Vision</h3>
+            <p>OpenCV · MediaPipe · TensorFlow · YOLOv5</p>
+        </article>
+
+        <article class="skill-card">
+            <h3>Embedded Systems</h3>
+            <p>ESP32 · Raspberry Pi · Microcontrollers · Arduino</p>
+        </article>
+
+        <article class="skill-card">
+            <h3>Tools & Platforms</h3>
+            <p>Git · GitHub · Linux · VS Code · Jupyter Notebook</p>
+        </article>
+
+    </div>
+</section>
+
+<section id="projects" class="section">
+    <h2 class="section-heading">My <span>Projects</span></h2>
+
+    <div class="projects-grid">
+
+        <article class="project-card">
+            <h3>Road Surface Anomaly Detection</h3>
+            <p>
+                Developed a scalable road surface anomaly detection
+                approach using real-time data streaming and distributed
+                data processing to identify road conditions.
+            </p>
+            <p class="tech">Apache Spark · PySpark · Kafka</p>
+            <a href="https://doi.org/10.1109/STPEC66316.2025.11490545"
+               target="_blank" rel="noopener noreferrer">Related Research ↗</a>
+        </article>
+
+        <article class="project-card">
+            <h3>Hand Gesture and Voice Recognition</h3>
+            <p>
+                Built a system that uses hand gestures and voice commands
+                to control desktop applications through computer vision
+                and speech recognition.
+            </p>
+            <p class="tech">Python · OpenCV · MediaPipe · PyAutoGUI</p>
+        </article>
+
+        <article class="project-card">
+            <h3>Roadside Unit-Based V2X Hazard Alert System</h3>
+            <p>
+                Worked on an edge AI and IoT-based hazard alert system
+                using roadside units to support road safety and
+                real-time hazard detection.
+            </p>
+            <p class="tech">YOLOv5n · Raspberry Pi · ESP32-CAM · V2X</p>
+        </article>
+
+    </div>
+</section>
+
+<section id="research" class="section">
+    <h2 class="section-heading">Research & <span>Publications</span></h2>
+
+    <article class="research-card">
+        <h3>Scalable Road Surface Anomaly Detection System Using Apache Spark and Real-Time Data Streaming</h3>
+        <p><strong>IEEE STPEC 2025 · NIT Goa</strong></p>
+        <p>Presenter and Co-Author · December 2025</p>
+        <p>
+            Research focused on scalable road surface anomaly detection
+            using Apache Spark and real-time streaming technologies.
+        </p>
+        <a href="https://doi.org/10.1109/STPEC66316.2025.11490545"
+           target="_blank" rel="noopener noreferrer">View IEEE Publication ↗</a>
+    </article>
+</section>
+
+<section id="certifications" class="section">
+    <h2 class="section-heading">Certifications & <span>Learning</span></h2>
+
+    <div class="cert-list">
+        <div class="cert-item">Generative AI</div>
+        <div class="cert-item">Quantum Programming using Qiskit</div>
+    </div>
+</section>
+
+<section id="contact" class="section contact-section">
+    <h2 class="section-heading">Get In <span>Touch</span></h2>
+    <p>Feel free to connect with me for opportunities and collaborations.</p>
+
+    <div class="contact-links">
+        <a href="mailto:krishnasowmiya68@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/sowmiyakrishna/"
+           target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/krishnasowmiya68-commits/"
+           target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Sowmiya Krishnamurthy. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
