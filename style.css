@@ -1,273 +1,449 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal technical portfolio of Sowmiya Krishnamurthy, Software Engineering student at VIT.">
-    <title>Sowmiya Krishnamurthy | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* ---------- Base styles ---------- */
 
-    <!-- Navigation -->
-    <header class="navbar">
-        <a href="#home" class="logo">S<span>.</span></a>
+:root {
+    --background: #0b0d14;
+    --surface: #131722;
+    --surface-hover: #1a2030;
+    --text: #f3f4f8;
+    --muted: #a4a9ba;
+    --accent: #a78bfa;
+    --border: rgba(255, 255, 255, 0.09);
+}
 
-        <nav>
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#research">Research</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 
-    <main>
-        <!-- Home -->
-        <section id="home" class="hero section">
-            <p class="eyebrow">HELLO! I'M</p>
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.7;
+}
 
-            <h1>Sowmiya<br><span>Krishnamurthy.</span></h1>
+a {
+    color: inherit;
+    text-decoration: none;
+}
 
-            <h2>M.Tech in Software Engineering</h2>
+main {
+    overflow: hidden;
+}
 
-            <p class="hero-text">
-                Data Analytics-Data Engineer-DevOps Engineer
-            </p>
+.section {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 90px 30px;
+    scroll-margin-top: 80px;
+}
 
-            <div class="hero-buttons">
-                <a href="#projects" class="button primary">
-                    Explore My Projects
-                </a>
+/* ---------- Navigation ---------- */
 
-                <a href="#contact" class="button secondary">
-                    Contact Me
-                </a>
-            </div>
+.navbar {
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(11, 13, 20, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
 
-            <p class="location">VIT Vellore · Tamil Nadu, India</p>
-        </section>
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--text);
+}
 
-        <!-- About -->
-        <section id="about" class="section">
-            <p class="eyebrow">GET TO KNOW ME</p>
-            <h2 class="section-title">About Me</h2>
+.logo span {
+    color: var(--accent);
+}
 
-            <div class="about-card">
-                <p>
-                    I am pursuing an Integrated M.Tech. in Software
-                    Engineering at Vellore Institute of Technology
-                    (VIT), Vellore, with expected graduation in 2027.
-                </p>
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
 
-                <p>
-                    I have a strong foundation in Python, C++, and SQL, with an interest in data visualization, data processing,
-                     and deriving meaningful insights from data.
-                </p>
+.navbar nav a {
+    color: var(--muted);
+    font-size: 14px;
+    transition: 0.3s;
+}
 
-                <p>
-                    I’m continuously expanding my technical skills and exploring opportunities to apply my knowledge,
-                     solve real-world problems, and grow as a technology professional.
-                </p>
-            </div>
-        </section>
+.navbar nav a:hover {
+    color: var(--accent);
+}
 
-        <!-- Skills -->
-        <section id="skills" class="section">
-            <p class="eyebrow">WHAT I WORK WITH</p>
-            <h2 class="section-title">Technical Skills</h2>
+/* ---------- Hero ---------- */
 
-            <div class="skills-grid">
-                <article class="skill-card">
-                    <h3>Programming</h3>
-                    <p>Python · C++ · C</p>
-                </article>
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 110px;
+    padding-bottom: 110px;
+}
 
-                <article class="skill-card">
-                    <h3>Databases</h3>
-                    <p>SQL · NoSQL</p>
-                </article>
+.eyebrow {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
 
-                <article class="skill-card">
-                    <h3>Data Engineering</h3>
-                    <p>Apache Spark · PySpark · Apache Kafka</p>
-                </article>
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.15;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
 
-                <article class="skill-card">
-                    <h3>Data Visualization</h3>
-                    <p>Power BI</p>
-                </article>
+.hero h1 span {
+    color: var(--accent);
+}
 
-                <article class="skill-card">
-                    <h3>Computer Vision</h3>
-                    <p>OpenCV · MediaPipe · TensorFlow</p>
-                </article>
+.hero h2 {
+    font-size: 21px;
+    color: var(--muted);
+    font-weight: 500;
+    margin-bottom: 15px;
+}
 
-                <article class="skill-card">
-                    <h3>Tools</h3>
-                    <p>Pandas, NumPy, Data Visualization, Jupyter Notebook, VS Code, and Git.</p>
-                </article>
+.hero-text {
+    max-width: 650px;
+    color: var(--muted);
+    font-size: 17px;
+    margin-bottom: 25px;
+}
 
-                <article class="skill-card">
-                    <h3>DevOps</h3>
-                    <p>DevOps knowledge</p>
-                </article>
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
 
-                <article class="skill-card">
-                    <h3>embedded systems</h3>
-                    <p>ESP32, microcontroller,arduino</p>
-                </article>
-            </div>
-        </section>
+.button {
+    padding: 12px 25px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
 
-        <!-- Projects -->
-        <section id="projects" class="section">
-            <p class="eyebrow">WHAT I'VE BUILT</p>
-            <h2 class="section-title">Featured Projects</h2>
+.button.primary {
+    background: var(--accent);
+    color: #11121a;
+}
 
-            <div class="projects-grid">
+.button.primary:hover {
+    background: #c4b5fd;
+    transform: translateY(-3px);
+}
 
-                <article class="project-card">
-                    <span class="project-number">01 / COMPUTER VISION</span>
-                    <h3>Road Surface Anomaly Detection</h3>
+.button.secondary {
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
 
-                    <p>
-                        A road monitoring project focused on
-                        identifying potholes, cracks and uneven
-                        road surfaces to support road safety.
-                    </p>
+.button.secondary:hover {
+    background: var(--accent);
+    color: #11121a;
+}
 
-                    <p class="tech-stack">
-                        Apache Spark · PySpark · Kafka
-                    </p>
+.location {
+    color: var(--muted);
+    font-size: 13px;
+    margin-top: 25px;
+}
 
-                    <a href="#research" class="text-link">
-                        Related research &rarr;
-                    </a>
-                </article>
+/* ---------- Section headings ---------- */
 
-                <article class="project-card">
-                    <span class="project-number">02 / AUTOMATION</span>
-                    <h3>Hand Gesture and Voice Recognition</h3>
+.section-title {
+    font-size: 34px;
+    font-weight: 750;
+    margin-bottom: 35px;
+    color: var(--text);
+}
 
-                    <p>
-                        A contactless computer control system
-                        using webcam-based hand gesture recognition
-                        and voice commands to interact with
-                        desktop applications.
-                    </p>
+/* ---------- About ---------- */
 
-                    <p class="tech-stack">
-                        Python · OpenCV · MediaPipe · PyAutoGUI
-                    </p>
-                </article>
+.about-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px;
+}
 
-                <article class="project-card">
-                    <span class="project-number">03 /Data Analysis</span>
-                    <h3>Sales Data Analysis and Business Insights Dashboard</h3>
+.about-card p {
+    color: var(--muted);
+    margin-bottom: 18px;
+}
 
-                    <p>
-                        A planned project focused on analysing sales trends, identifying top-performing products, evaluating regional performance, 
-                        and presenting business insights through an interactive dashboard using SQL, Python, Excel, and Power BI.
-                    </p>
+.about-card p:last-child {
+    margin-bottom: 0;
+}
 
-                    <p class="tech-stack">
-                        Python · CNN · TensorFlow
-                    </p>
-                </article>
+/* ---------- Skills ---------- */
 
-            </div>
-        </section>
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
 
-        <!-- Research -->
-        <section id="research" class="section">
-            <p class="eyebrow">RESEARCH & ACHIEVEMENTS</p>
-            <h2 class="section-title">Research Publication</h2>
+.skill-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 25px;
+    transition: 0.3s;
+}
 
-            <article class="research-card">
-                <p class="research-label">
-                    IEEE STPEC 2025 · NIT Goa
-                </p>
+.skill-card:hover {
+    background: var(--surface-hover);
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
 
-                <h3>
-                    Scalable Road Surface Anomaly Detection
-                    System Using Apache Spark and Real-Time
-                    Data Streaming
-                </h3>
+.skill-card h3 {
+    color: var(--accent);
+    font-size: 17px;
+    margin-bottom: 10px;
+}
 
-                <p>
-                    Presenter and Co-Author · December 2025
-                </p>
+.skill-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
 
-                <p>
-                    Research on scalable road surface anomaly
-                    detection using real-time data streaming
-                    technologies, including Apache Kafka and
-                    Apache Spark.
-                </p>
-            </article>
-        </section>
+/* ---------- Projects ---------- */
 
-        <!-- Certifications -->
-        <section id="certifications" class="section">
-            <p class="eyebrow">CONTINUOUS LEARNING</p>
-            <h2 class="section-title">Certifications</h2>
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
 
-            <div class="cert-list">
-                <div class="cert-item">
-                    <span class="cert-icon">&#10003;</span>
-                    <p>Generative AI</p>
-                </div>
+.project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    transition: 0.3s;
+}
 
-                <div class="cert-item">
-                    <span class="cert-icon">&#10003;</span>
-                    <p>Quantum Programming using Qiskit</p>
-                </div>
-            </div>
-        </section>
+.project-card:hover {
+    background: var(--surface-hover);
+    border-color: var(--accent);
+    transform: translateY(-4px);
+}
 
-        <!-- Contact -->
-        <section id="contact" class="section contact-section">
-            <p class="eyebrow">LET'S CONNECT</p>
-            <h2 class="section-title">Get in Touch</h2>
+.project-number {
+    display: block;
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
 
-            <p>
-                I am interested in suitable software and
-                technology opportunities, internships and
-                opportunities to learn and collaborate.
-            </p>
+.project-card h3 {
+    font-size: 19px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
 
-            <div class="contact-links">
-                <!-- Replace these placeholder links -->
-                
-             <a href="mailto:krishnasowmiya68@gmail.com">Email Me</a>
+.project-card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
 
-             <a href="https://www.linkedin.com/in/sowmiyakrishna/"
-                 target="_blank" rel="noopener noreferrer">
-                 LinkedIn
-             </a>
+.project-card .tech-stack {
+    color: var(--accent);
+    font-size: 13px;
+    font-weight: 600;
+}
 
-              <a href="https://github.com/krishnasowmiya68-commits/"
-              target="_blank" rel="noopener noreferrer">
-              GitHub
-              </a>
+.text-link {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 14px;
+    margin-top: 5px;
+    transition: 0.3s;
+}
 
-                </a>
-            </div>
+.text-link:hover {
+    color: #c4b5fd;
+}
 
-            <!-- Add your resume PDF in this folder later -->
-            <p class="resume-note">
-            </p>
-        </section>
-    </main>
+/* ---------- Research ---------- */
 
-    <footer>
-        <p>
-            &copy; 2026 Sowmiya Krishnamurthy.
-            Built with HTML and CSS.
-        </p>
-    </footer>
+.research-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 30px;
+}
 
-</body>
-</html>
+.research-label {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 15px;
+}
+
+.research-card h3 {
+    font-size: 21px;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.research-card p {
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+
+/* ---------- Certifications ---------- */
+
+.cert-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.cert-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.cert-icon {
+    color: var(--accent);
+    font-size: 20px;
+}
+
+.cert-item p {
+    color: var(--text);
+    font-size: 14px;
+}
+
+/* ---------- Contact ---------- */
+
+.contact-section > p:not(.eyebrow) {
+    color: var(--muted);
+    max-width: 650px;
+    margin-bottom: 25px;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.contact-links a {
+    padding: 11px 22px;
+    border: 1px solid var(--accent);
+    border-radius: 7px;
+    color: var(--accent);
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.contact-links a:hover {
+    background: var(--accent);
+    color: #11121a;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ---------- Responsive design ---------- */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 16px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navbar nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 18px;
+    }
+
+    .navbar nav a {
+        font-size: 12px;
+    }
+
+    .section {
+        padding: 65px 22px;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .cert-list {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 29px;
+    }
+
+    .project-card,
+    .about-card,
+    .research-card {
+        padding: 22px;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .button {
+        text-align: center;
+    }
+}
